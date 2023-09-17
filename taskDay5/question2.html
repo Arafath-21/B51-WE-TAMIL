@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Circle {
+  constructor(radius = 1.0) {
+    this.radius = radius;
+  }
+
+  // Getter and setter for radius
+  getRadius() {
+    return this.radius;
+  }
+
+  setRadius(radius) {
+    this.radius = radius;
+  }
+
+  // Calculate area of the circle
+  getArea() {
+    return Math.PI * this.radius * this.radius;
+  }
+
+  // Calculate circumference of the circle
+  getCircumference() {
+    return 2 * Math.PI * this.radius;
+  }
+}
+
+// Example usage:
+const circle1 = new Circle(); // Creates a circle with default radius 1.0
+console.log(`Circle 1 - Radius: ${circle1.getRadius()}, Area: ${circle1.getArea()}, Circumference: ${circle1.getCircumference()}`);
+
+const circle2 = new Circle(2.5); // Creates a circle with radius 2.5
+console.log(`Circle 2 - Radius: ${circle2.getRadius()}, Area: ${circle2.getArea()}, Circumference: ${circle2.getCircumference()}`);
+
+    </script>
+</body>
+</html>

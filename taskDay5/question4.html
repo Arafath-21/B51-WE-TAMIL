@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+class UberPriceCalculator {
+  constructor(baseFare, costPerKilometer, costPerMinute) {
+    this.baseFare = baseFare;
+    this.costPerKilometer = costPerKilometer;
+    this.costPerMinute = costPerMinute;
+    this.distance = 0;
+    this.waitingTime = 0;
+  }
+
+  calculatePrice(distanceInKilometers, durationInMinutes) {
+    this.distance = distanceInKilometers;
+    this.waitingTime = durationInMinutes ; 
+
+    const totalCost = (
+      this.baseFare +
+      distanceInKilometers * this.costPerKilometer +
+      durationInMinutes * this.costPerMinute
+    );
+
+    return totalCost;
+  }
+
+  getRideDetails() {
+    return `The distance of the ride is ${this.distance} km with a rate of Rs${this.calculatePrice(this.distance, this.waitingTime).toFixed(2)} with a waiting period of ${this.waitingTime} min`;
+  }
+}
+
+const calculator = new UberPriceCalculator(25, 9, 2); 
+
+const distance = 10; // 10 kilometers
+const duration = 20; // 20 minutes
+
+const price = calculator.calculatePrice(distance, duration);
+const rideDetails = calculator.getRideDetails();
+
+console.log(`Estimated Uber Price: Rs ${price.toFixed(2)}`);
+console.log(rideDetails);
+
+
+    </script>
+</body>
+</html>

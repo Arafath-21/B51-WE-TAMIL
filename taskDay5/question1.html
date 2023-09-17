@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// Class - Movie
+class Movie {
+    constructor(title, studio, rating = "PG") {
+      this.title = title;
+      this.studio = studio;
+      this.rating = rating;
+    }
+   static getPG(movieList) {
+        return movieList.filter(movie => movie.rating === "PG");
+    }
+  }
+  
+  // Creating an instance of the class Movie
+  const casinoRoyale = new Movie("Casino Royale", "Eon Productions", "PG-13");
+  
+  // Example usage of the getPG method
+  const movieList = [
+    new Movie("Movie1", "Studio1", "PG"),
+    new Movie("Movie2", "Studio2", "PG-13"),
+    new Movie("Movie3", "Studio3", "R"),
+    casinoRoyale,  // Adding the previously created instance
+    new Movie("Movie4", "Studio4")  // Testing the default rating
+  ];
+  
+  const pgMovies = Movie.getPG(movieList);
+  
+  // Printing the titles of PG-rated movies
+  for (const movie of pgMovies) {
+    console.log(movie.title);
+  }
+  
+
+       
+    </script>
+</body>
+</html>
